@@ -165,7 +165,8 @@ if (isset($_POST['userSubmit'])) {
     $ma_so = $_GET['ma_so'];
     //
     // Delete data from SQL server 
-    $sql = "DELETE FROM HOC_VIEN WHERE ma_so = ?";
+    //$sql = "DELETE FROM HOC_VIEN WHERE ma_so = ?";
+    $sql = "{CALL sp_delete_hoc_vien(?)}";
     $query = $conn->prepare($sql);
     $delete = $query->execute(array($ma_so));
     if ($delete) {
