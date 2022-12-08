@@ -22,9 +22,9 @@ if (!empty($_GET['ma_so'])) {
     require_once 'dbConfig.php';
 
     // Fetch data from SQL server by row ID 
-    $sql = 'SELECT * FROM HOC_VIEN WHERE ma_so = ' . $_GET['ma_so'];
+    $sql = 'SELECT * FROM HOC_VIEN WHERE ma_so = ?';
     $query = $conn->prepare($sql);
-    $query->execute();
+    $query->execute([$_GET['ma_so']]);
     $memberData = $query->fetch(PDO::FETCH_ASSOC);
 }
 $userData = !empty($sessData['userData']) ? $sessData['userData'] : $memberData;

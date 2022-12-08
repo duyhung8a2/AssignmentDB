@@ -121,7 +121,7 @@ $members = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="md-form mb-5">
                             <i class="fas grey-text"></i>
                             <label data-error="wrong" data-success="right" for="form3">Học vấn:</label>
-                            <input type="text" id="form3" name="hoc_van" class="form-control validate"
+                            <input type="number" id="form3" name="hoc_van" class="form-control validate"
                                 placeholder="Ví dụ: 11" required="">
                             </input>
                         </div>
