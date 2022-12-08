@@ -157,7 +157,6 @@ if (isset($_POST['userSubmit'])) {
     $sql = "DELETE FROM HOC_VIEN WHERE ma_so = ?";
     $query = $conn->prepare($sql);
     $delete = $query->execute(array($ma_so));
-    debug_print_backtrace();
     if ($delete) {
         $sessData['status']['type'] = 'success';
         $sessData['status']['msg'] = 'Member data has been deleted successfully.';
@@ -170,7 +169,7 @@ if (isset($_POST['userSubmit'])) {
     $_SESSION['sessData'] = $sessData;
 }
 
-// Redirect to the respective page 
+// Redirect to the respective page
 header("Location:" . $redirectURL);
 exit();
 ?>

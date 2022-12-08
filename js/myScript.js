@@ -1,20 +1,20 @@
 window.onload = function () {
-console.log("Hello world!");
-var lophoc = document.getElementById("lophoc-btn");
-var hocvien = document.getElementById("hocvien-btn")
-if (lophoc != null) {
-    console.log("Read done")
-}
-else {
-    console.log("Fucked somewhere")
-}
-lophoc.addEventListener("click", (e) => {
-    document.getElementById("hocvienWrapper").style.display = "none";
-    document.getElementById("lophocWrapper").style.display = "";
-});
+    console.log("Hello world!");
+    var hocvien = document.getElementById("hocvien-btn");
+    if (hocvien != null) {
+        console.log("Read done")
+    }
+    else {
+        console.log("Fucked somewhere")
+    }
+    hocvien.addEventListener("click", (e) => {
+        document.getElementById("hocvienWrapper").style.display = "";
+        document.getElementById("Procedure1Wrapper").style.display = "none";
+    });
 
-hocvien.addEventListener("click", (e) => {
-    document.getElementById("hocvienWrapper").style.display = "";
-    document.getElementById("lophocWrapper").style.display = "none";
-});
+    var prod1 = document.getElementById("prod1-btn");
+    prod1.addEventListener("click", (e) => {
+        document.getElementById("hocvienWrapper").style.display = "none";
+        document.getElementById("Procedure1Wrapper").style.display = "";
+    });
 };

@@ -8,15 +8,14 @@ body {
 
 .frameWrapper {
     width: '80%' !important;
-    display: block;
 }
 
-#lophocWrapper {
-    display: "none";
+#Procedure1Wrapper {
+    display: "none" !important;
 }
 
 #hocvienWrapper {
-    display: "";
+    display: "" !important;
 }
 
 #buttonWrapper a.button {
@@ -36,4 +35,12 @@ body {
     font-size: 25px;
     font-weight: 700;
     text-align: 'center';
+}
+
+.modal-notify .modal-header {
+    border-radius: 3px 3px 0 0;
+}
+
+.modal-notify .modal-content {
+    border-radius: 3px;
 }

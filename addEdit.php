@@ -101,7 +101,7 @@ $actionLabel = !empty($_GET['ma_so']) ? 'Edit' : 'Add';
                 <div class="form-group row">
                     <label>Trình độ học vấn</label>
                     <input type="number" class="form-control" name="hoc_van"
-                        placeholder="Trình độ học vấn trên thang 12"  min="1" max="12"
+                        placeholder="Trình độ học vấn trên thang 12" min="1" max="12"
                         value="<?php echo !empty($userData['hoc_van']) ? $userData['hoc_van'] : ''; ?>" required="">
                 </div>
                 <div class="row">
