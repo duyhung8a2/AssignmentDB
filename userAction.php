@@ -109,7 +109,7 @@ if (isset($_POST['userSubmit'])) {
 
 
                 //$sql = "INSERT INTO HOC_VIEN (ma_so, ten, email, ngay_sinh, sdt_hoc_vien, sdt_nguoi_than, hoc_van) VALUES (?,?,?,?,?,?,?)";
-                $sql = "{CALL sp_insert_hoc_vien(?,?,?,?,?,?,?)}";
+                $sql = "{CALL sp_them_hoc_vien(?,?,?,?,?,?,?)}";
                 $params = array(
                     &
                     $new_ma_so, &

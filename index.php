@@ -121,7 +121,7 @@ $members = $query->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <!--Footer-->
                         <div class="modal-footer justify-content-center">
-                            <input type="submit" name="userSubmitProd2" id="prod2-btn"
+                            <input type="submit" name="userSubmitProd2" id="prod2-btn" 
                                 class="btn btn-outline-warning waves-effect"></input>
                         </div>
                     </form>
@@ -149,7 +149,7 @@ $members = $query->fetchAll(PDO::FETCH_ASSOC);
     <div id="hocvienWrapper" class="frameWrapper p-4">
         <div class="row">
             <div class="col-md-12 head">
-                <div class="tableHeader text-center h6"> Học viên</div>
+                <div class="tableHeader text-center h1"> Học viên</div>
                 <!-- Add link -->
                 <div class="float-right">
                     <a href="addEdit.php" class="btn btn-success"><i class="plus"></i> Học viên mới</a>
@@ -244,7 +244,7 @@ $members = $query->fetchAll(PDO::FETCH_ASSOC);
     <div id="Procedure1Wrapper" class="frameWrapper p-4">
         <div class="col">
             <div class="row justify-content-center">
-                <div class="tableHeader text-center h6"> Số
+                <div class="tableHeader text-center h2"> Số
                     buổi học của chi nhánh</div>
             </div>
         </div>
@@ -312,10 +312,10 @@ $members = $query->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
 
-    <div id="Procedure1Wrapper" class="frameWrapper p-4">
+    <div id="Procedure2Wrapper" class="frameWrapper p-4">
         <div class="col">
             <div class="row justify-content-center">
-                <div class="tableHeader text-center h6"> Xem học phí theo học vấn</div>
+                <div class="tableHeader text-center h2"> Xem học phí theo học vấn</div>
             </div>
         </div>
 
@@ -355,7 +355,7 @@ $members = $query->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
-
+    <div id="bottom"></div>
 </body>
 
 </html>

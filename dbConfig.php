@@ -3,7 +3,7 @@
 $serverName = "LAPTOP-RPUH2FGN"; 
 $dbUsername = ""; 
 $dbPassword = ""; 
-$dbName     = "ASSIGNMENTDB"; 
+$dbName     = "BTL2"; 
  
 // Create database connection 
 try {   
