@@ -33,66 +33,88 @@ unset($_SESSION['sessData']['userData']);
 $actionLabel = !empty($_GET['ma_so']) ? 'Edit' : 'Add';
 ?>
 
-<!-- Display status message -->
-<?php if (!empty($statusMsg) && ($statusMsgType == 'success')) { ?>
-<div class="col-xs-12">
-    <div class="alert alert-success">
-        <?php echo $statusMsg; ?>
-    </div>
-</div>
-<?php } elseif (!empty($statusMsg) && ($statusMsgType == 'error')) { ?>
-<div class="col-xs-12">
-    <div class="alert alert-danger">
-        <?php echo $statusMsg; ?>
-    </div>
-</div>
-<?php } ?>
 
-<div class="row">
-    <div class="col-md-12">
-        <h2>
-            <?php echo $actionLabel; ?> Học viên
-        </h2>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Display status message -->
+    <?php if (!empty($statusMsg) && ($statusMsgType == 'success')) { ?>
+    <div class="col-xs-12">
+        <div class="alert alert-success">
+            <?php echo $statusMsg; ?>
+        </div>
     </div>
-    <div class="col-md-6">
-        <form method="post" action="userAction.php">
-            <div class="form-group">
-                <label>Tên</label>
-                <input type="text" class="form-control" name="ten" placeholder="Hãy nhập tên của bạn"
-                    value="<?php echo !empty($userData['ten']) ? $userData['ten'] : ''; ?>" required="">
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Hãy nhập email của bạn"
-                    value="<?php echo !empty($userData['email']) ? $userData['email'] : ''; ?>" required="">
-            </div>
-            <div class="form-group">
-                <label>Ngày sinh</label>
-                <input type="date" class="form-control" name="ngay_sinh" placeholder="Ví dụ: yyyy-mm-dd"
-                    value="<?php echo !empty($userData['ngay_sinh']) ? $userData['ngay_sinh'] : ''; ?>" required="">
-            </div>
-            <div class="form-group">
-                <label>Số điện thoại của bạn</label>
-                <input type="tel" class="form-control" name="sdt_hoc_vien" placeholder="Nhập số điện thoại của bạn"
-                    value="<?php echo !empty($userData['sdt_hoc_vien']) ? $userData['sdt_hoc_vien'] : ''; ?>" required="">
-            </div>
-            <div class="form-group">
-                <label>Số điện thoại của người thân bạn</label>
-                <input type="tel" class="form-control" name="sdt_nguoi_than"
-                    placeholder="Nhập số điện thoại của người thân bạn"
-                    value="<?php echo !empty($userData['sdt_nguoi_than']) ? $userData['sdt_nguoi_than'] : ''; ?>"
-                    required="">
-            </div>
-            <div class="form-group">
-                <label>Trình độ học vấn</label>
-                <input type="number" class="form-control" name="hoc_van" placeholder="Trình độ học vấn trên thang 12"
-                    value="<?php echo !empty($userData['hoc_van']) ? $userData['hoc_van'] : ''; ?>" required="">
-            </div>
-            <a href="index.php" class="btn btn-secondary">Back</a>
-            <input type="hidden" name="ma_so"
-                value="<?php echo !empty($userData['ma_so']) ? $userData['ma_so'] : ''; ?>">
-            <input type="submit" name="userSubmit" class="btn btn-success" value="Submit">
-        </form>
+    <?php } elseif (!empty($statusMsg) && ($statusMsgType == 'error')) { ?>
+    <div class="col-xs-12">
+        <div class="alert alert-danger">
+            <?php echo $statusMsg; ?>
+        </div>
     </div>
-</div>
+    <?php } ?>
+    <div class="container">
+        <div class="col-md-12 align-items-center">
+            <h2>
+                <?php echo $actionLabel; ?> Học viên
+            </h2>
+
+        </div>
+        <div class="col-md-12">
+            <form method="post" action="userAction.php">
+                <div class="form-group row">
+                    <label>Tên</label>
+                    <input type="text" class="form-control" name="ten" placeholder="Hãy nhập tên của bạn"
+                        value="<?php echo !empty($userData['ten']) ? $userData['ten'] : ''; ?>" required="">
+                </div>
+                <div class="form-group row">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Hãy nhập email của bạn"
+                        value="<?php echo !empty($userData['email']) ? $userData['email'] : ''; ?>" required="">
+                </div>
+                <div class="form-group row">
+                    <label>Ngày sinh</label>
+                    <input type="date" class="form-control" name="ngay_sinh" placeholder="Ví dụ: yyyy-mm-dd"
+                        value="<?php echo !empty($userData['ngay_sinh']) ? $userData['ngay_sinh'] : ''; ?>" required="">
+                </div>
+                <div class="form-group row">
+                    <label>Số điện thoại của bạn</label>
+                    <input type="tel" class="form-control" name="sdt_hoc_vien" placeholder="Nhập số điện thoại của bạn"
+                        value="<?php echo !empty($userData['sdt_hoc_vien']) ? $userData['sdt_hoc_vien'] : ''; ?>"
+                        required="">
+                </div>
+                <div class="form-group row">
+                    <label>Số điện thoại của người thân bạn</label>
+                    <input type="tel" class="form-control" name="sdt_nguoi_than"
+                        placeholder="Nhập số điện thoại của người thân bạn"
+                        value="<?php echo !empty($userData['sdt_nguoi_than']) ? $userData['sdt_nguoi_than'] : ''; ?>"
+                        required="">
+                </div>
+                <div class="form-group row">
+                    <label>Trình độ học vấn</label>
+                    <input type="number" class="form-control" name="hoc_van"
+                        placeholder="Trình độ học vấn trên thang 12"  min="1" max="12"
+                        value="<?php echo !empty($userData['hoc_van']) ? $userData['hoc_van'] : ''; ?>" required="">
+                </div>
+                <div class="row">
+                    <a href="index.php" class="btn btn-secondary">Back</a>
+                    <input type="hidden" name="ma_so"
+                        value="<?php echo !empty($userData['ma_so']) ? $userData['ma_so'] : ''; ?>">
+                    <input type="submit" name="userSubmit" class="btn btn-success" value="Submit">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
