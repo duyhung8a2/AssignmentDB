@@ -27,7 +27,7 @@ if (isset($_POST['userSubmit'])) {
     $ten = trim(strip_tags($_POST['ten']));
     $email = trim(strip_tags($_POST['email']));
     $ngay_sinh = trim(strip_tags($_POST['ngay_sinh']));
-    $sdt_hoc_ven = trim(strip_tags($_POST['sdt_hoc_ven']));
+    $sdt_hoc_vien = trim(strip_tags($_POST['sdt_hoc_vien']));
     $sdt_nguoi_than = trim(strip_tags($_POST['sdt_nguoi_than']));
     $hoc_van = trim(strip_tags($_POST['hoc_van']));
 
@@ -47,7 +47,7 @@ if (isset($_POST['userSubmit'])) {
     if (empty($ngay_sinh)) {
         $errorMsg .= '<p>Vui lòng nhập ngày sinh của bạn. Ví dụ: yyyy-mm-dd</p>';
     }
-    if (empty($sdt_hoc_ven)) {
+    if (empty($sdt_hoc_vien)) {
         $errorMsg .= '<p>Vui lòng nhập số điện thoại của bạn.</p>';
     }
     if (empty($sdt_nguoi_than)) {
@@ -62,7 +62,7 @@ if (isset($_POST['userSubmit'])) {
         'ten' => $ten,
         'email' => $email,
         'ngay_sinh' => $ngay_sinh,
-        'sdt_hoc_ven' => $sdt_hoc_ven,
+        'sdt_hoc_vien' => $sdt_hoc_vien,
         'sdt_nguoi_than' => $sdt_nguoi_than,
         'hoc_van' => $hoc_van
     );
@@ -74,9 +74,9 @@ if (isset($_POST['userSubmit'])) {
     if (empty($errorMsg)) {
         if (!empty($ma_so)) {
             // Update data in SQL server 
-            $sql = "UPDATE HOC_VIEN SET ten = ?,  email = ?, ngay_sinh = ?, sdt_hoc_ven = ?, sdt_nguoi_than = ?, hoc_van = ? WHERE ma_so = ?";
+            $sql = "UPDATE HOC_VIEN SET ten = ?,  email = ?, ngay_sinh = ?, sdt_hoc_vien = ?, sdt_nguoi_than = ?, hoc_van = ? WHERE ma_so = ?";
             $query = $conn->prepare($sql);
-            $update = $query->execute(array($ten, $email, $ngay_sinh, $sdt_hoc_ven, $sdt_nguoi_than, $hoc_van, $ma_so));
+            $update = $query->execute(array($ten, $email, $ngay_sinh, $sdt_hoc_vien, $sdt_nguoi_than, $hoc_van, $ma_so));
 
             if ($update) {
                 $sessData['status']['type'] = 'success';
@@ -107,14 +107,14 @@ if (isset($_POST['userSubmit'])) {
                 }
 
 
-                $sql = "INSERT INTO HOC_VIEN (ma_so, ten, email, ngay_sinh, sdt_hoc_ven, sdt_nguoi_than, hoc_van) VALUES (?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO HOC_VIEN (ma_so, ten, email, ngay_sinh, sdt_hoc_vien, sdt_nguoi_than, hoc_van) VALUES (?,?,?,?,?,?,?)";
                 $params = array(
-                &
+                    &
                     $new_ma_so, &
                     $ten, &
                     $email, &
                     $ngay_sinh, &
-                    $sdt_hoc_ven, &
+                    $sdt_hoc_vien, &
                     $sdt_nguoi_than, &
                     $hoc_van
                 );

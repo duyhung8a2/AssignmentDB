@@ -94,6 +94,7 @@ $classrooms = $query1->fetchAll(PDO::FETCH_ASSOC);
                     <th>#</th>
                     <th>Mã số</th>
                     <th>Tên</th>
+                    <th>Email</th>
                     <th>Ngày sinh</th>
                     <th>Số điện thoại học viên</th>
                     <th>Số điện thoại người thân</th>
@@ -118,6 +119,9 @@ $classrooms = $query1->fetchAll(PDO::FETCH_ASSOC);
                     </td>
                     <td>
                         <?php echo $row['email']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['ngay_sinh']; ?>
                     </td>
                     <td>
                         <?php echo $row['sdt_hoc_vien']; ?>
