@@ -74,9 +74,10 @@ if (isset($_POST['userSubmit'])) {
     if (empty($errorMsg)) {
         if (!empty($ma_so)) {
             // Update data in SQL server 
-            $sql = "UPDATE HOC_VIEN SET ten = ?,  email = ?, ngay_sinh = ?, sdt_hoc_vien = ?, sdt_nguoi_than = ?, hoc_van = ? WHERE ma_so = ?";
+            //$sql = "UPDATE HOC_VIEN SET ten = ?,  email = ?, ngay_sinh = ?, sdt_hoc_vien = ?, sdt_nguoi_than = ?, hoc_van = ? WHERE ma_so = ?";
+            $sql = "{CALL sp_update_hoc_vien(?,?,?,?,?,?,?)}";
             $query = $conn->prepare($sql);
-            $update = $query->execute(array($ten, $email, $ngay_sinh, $sdt_hoc_vien, $sdt_nguoi_than, $hoc_van, $ma_so));
+            $update = $query->execute(array($ma_so, $ten, $email, $ngay_sinh, $sdt_hoc_vien, $sdt_nguoi_than, $hoc_van));
 
             if ($update) {
                 $sessData['status']['type'] = 'success';
