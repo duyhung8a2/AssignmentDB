@@ -20,15 +20,9 @@ require_once 'dbConfig.php';
 
 // Fetch the data from SQL server 
 $sql = "SELECT * FROM HOC_VIEN ORDER BY ma_so DESC";
-//$sql1 = "SELECT * FROM LOP_HOC ORDER BY ma_so DESC";
 $query = $conn->prepare($sql);
 $query->execute();
 $members = $query->fetchAll(PDO::FETCH_ASSOC);
-
-// $query1 = $conn->prepare($sql1);
-// $query1->execute();
-// $classrooms = $query1->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!-- Display status message -->
