@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    text-align: center;
+    margin-top: 1.5rem !important;
+}
+
+.frameWrapper {
+    width: '80%' !important;
+    display: block;
+}
+
+#lophocWrapper {
+    display: "none";
+}
+
+#hocvienWrapper {
+    display: "";
+}
+
+#buttonWrapper a.button {
+    background-color: tomato;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+
+}
+
+#buttonWrapper a.button:hover {
+    background-color: darken(tomato, 10%);
+}
+
+.tableHeader {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: 'center';
+}
