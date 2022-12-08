@@ -107,7 +107,8 @@ if (isset($_POST['userSubmit'])) {
                 }
 
 
-                $sql = "INSERT INTO HOC_VIEN (ma_so, ten, email, ngay_sinh, sdt_hoc_vien, sdt_nguoi_than, hoc_van) VALUES (?,?,?,?,?,?,?)";
+                //$sql = "INSERT INTO HOC_VIEN (ma_so, ten, email, ngay_sinh, sdt_hoc_vien, sdt_nguoi_than, hoc_van) VALUES (?,?,?,?,?,?,?)";
+                $sql = "{CALL sp_insert_hoc_vien(?,?,?,?,?,?,?)}";
                 $params = array(
                     &
                     $new_ma_so, &
@@ -118,8 +119,17 @@ if (isset($_POST['userSubmit'])) {
                     $sdt_nguoi_than, &
                     $hoc_van
                 );
-                $query = $conn->prepare($sql);
+                 $query = $conn->prepare($sql);
+                // $query->bindValue(1, $new_ma_so);
+                // $query->bindValue(2, $ten);
+                // $query->bindValue(3, $email);
+                // $query->bindValue(4, $ngay_sinh);
+                // $query->bindValue(5, $sdt_hoc_vien);
+                // $query->bindValue(6, $sdt_nguoi_than);
+                // $query->bindValue(7, $hoc_van);
+
                 $insert = $query->execute($params);
+                //$insert = $query->execute();
                 echo "New record created successfully";
             } catch (PDOException $e) {
                 echo $sql . "<br>" . $e->getMessage();
